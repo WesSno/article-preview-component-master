@@ -320,7 +320,7 @@ a {
     width: 100%;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 82%, 0% 82%);
   }
 
   .card-text {
