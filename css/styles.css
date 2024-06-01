@@ -29,15 +29,15 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 10px;
   width: 100%;
   max-width: 700px;
   position: relative;
 }
 
 .drawers-img img {
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   width: 130%;
   clip-path: polygon(0% 0%, 80% 0%, 80% 100%, 0% 100%);
   vertical-align: bottom;
