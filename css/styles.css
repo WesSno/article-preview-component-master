@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-grayish-blue);
+  min-height: 100vh;
+}
+
+/*********** CARD ************/
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+}
+
+.drawers-img img {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  width: 130%;
+  clip-path: polygon(0% 0%, 80% 0%, 80% 100%, 0% 100%);
+  vertical-align: bottom;
+}
+.drawers-img {
+  width: 130%;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0 2rem;
+}
+
+.card-text h1 {
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--very-dark-grayish-blue);
+}
+
+.card-text p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.3rem;
+  color: var(--desaturated-dark-blue);
+}
+
+/************ AUTHOR ***********/
+.author-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7.9rem;
+}
+
+.author-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.author-id {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.author-id h2 {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: var(--very-dark-grayish-blue);
+}
+
+.author-id p {
+  font-weight: 500;
+}
+
+.author-img {
+  width: 40px;
+  overflow: hidden;
+}
+
+.author-img img {
+  width: 100%;
+  border-radius: 100%;
+}
+
+/* ************ SHARE ICON ****************  */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  background-color: var(--light-grayish-blue);
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  border: none;
+  width: 42px;
+  text-align: center;
+  color: var(--desaturated-dark-blue);
+  transition: 0.2s ease;
+}
+
+.tooltip:hover {
+  color: #fff;
+  background-color: var(--desaturated-dark-blue);
+}
+
+.tooltip-social {
+  visibility: hidden;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  color: #fff;
+  background-color: var(--very-dark-grayish-blue);
+  padding: 20px 0;
+  position: absolute;
+  bottom: 170%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: 100;
+  font-size: 0.7rem;
+  box-shadow: 0px 5px 5px var(--light-grayish-blue);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-social i {
+  font-size: 1rem;
+}
+
+.tooltip.visible .tooltip-social {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-social::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 15px;
+  border-style: solid;
+  border-color: var(--very-dark-grayish-blue) transparent transparent
+    transparent;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media only screen and (max-width: 880px) {
+  .tooltip-social {
+    gap: 0.8rem;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .card {
+    width: 600px;
+  }
+
+  .card-text {
+    padding: 0 0.9rem;
+    gap: 1rem;
+  }
+
+  .card-text h1 {
+    font-size: 1rem;
+  }
+
+  .card-text p {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+  }
+
+  .drawers-img img {
+    width: 120%;
+  }
+
+  .drawers-img {
+    width: 120%;
+  }
+
+  .author-info {
+    gap: 8rem;
+  }
+
+  .author-img {
+    width: 35px;
+  }
+
+  .author-id h2,
+  .author-id p {
+    font-size: 0.6rem;
+  }
+
+  .tooltip {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    width: 30px;
+  }
+
+  .tooltip-social {
+    padding: 12px 0;
+    font-size: 0.5rem;
+    gap: 0.4rem;
+    width: 150px;
+  }
+
+  .tooltip-social i {
+    font-size: 0.7rem;
+  }
+
+  .tooltip-social::after {
+    border-width: 7px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .card {
+    width: 520px;
+  }
+
+  .drawers-img img {
+    width: 110%;
+  }
+
+  .drawers-img {
+    width: 110%;
+  }
+
+  .card-text {
+    gap: 0.7rem;
+    padding: 0 0.2rem;
+  }
+
+  .card-text h1 {
+    font-size: 0.9rem;
+    padding: 0 0;
+  }
+
+  .card-text p {
+    font-size: 0.6rem;
+    line-height: 0.8rem;
+  }
+
+  .author-info {
+    gap: 6rem;
+  }
+
+  .author-img {
+    width: 30px;
+  }
+
+  .tooltip {
+    padding: 0.3rem;
+    font-size: 0.5rem;
+    width: 20px;
+  }
+
+  .tooltip-social {
+    padding: 12px 0;
+    font-size: 0.4rem;
+    gap: 0.2rem;
+    width: 110px;
+  }
+
+  .tooltip-social i {
+    font-size: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .card {
+    flex-direction: column;
+    overflow: hidden;
+    width: 375px;
+    margin: 0 1rem;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .drawers-img {
+    width: 100%;
+  }
+
+  .drawers-img img {
+    width: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%);
+  }
+
+  .card-text {
+    padding: 0 1.5rem;
+  }
+
+  .card-text h1 {
+    font-size: 1.1rem;
+    margin-top: -2rem;
+  }
+
+  .card-text p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .author-info {
+    gap: 6.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .author-img {
+    width: 45px;
+    overflow: hidden;
+  }
+
+  .author-details {
+    display: flex;
+    justify-content: center;
+  }
+
+  .author-id h2 {
+    font-size: 0.7rem;
+    width: 100px;
+  }
+
+  .author-id p {
+    font-size: 0.7rem;
+    margin-bottom: -0.2rem;
+  }
+
+  .tooltip {
+    position: relative;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    border: none;
+    width: 42px;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .tooltip:hover {
+    width: 42px;
+    padding: 0;
+  }
+
+  .share-icon {
+    position: relative;
+    z-index: 2;
+  }
+
+  .share-icon.rounded {
+    background-color: var(--desaturated-dark-blue);
+    padding: 0.8rem;
+    border-radius: 50px;
+    transition: 0.2s ease;
+  }
+
+  .tooltip-social {
+    visibility: hidden;
+    width: 550px;
+    gap: 1.2rem;
+    padding: 30px 0;
+    bottom: -23px;
+    left: -380%;
+    font-size: 0.8rem;
+    border-radius: 0px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .tooltip-social i {
+    font-size: 1.5rem;
+    z-index: 1;
+  }
+
+  .tooltip-social::after {
+    border-width: 0;
+  }
+}
